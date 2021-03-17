@@ -15,8 +15,11 @@ You can sign-up & sign-in with your sql server bought things it sends you a emai
 Log-In Screen; </br>
 <img src="https://i.imgur.com/k0Nen2K.png" width="250" height="400" /> </br>
 Sign-Up Screen;</br>
-<img src="https://imgur.com/syavkSZ" width="250" height="400" /> </br>
-
+<img src="https://i.imgur.com/syavkSZ.png" width="250" height="400" /> </br>
+Main-Page Screen;</br>
+<img src="https://i.imgur.com/WkZowJ9.png" width="400" height="200" /> </br>
+Orders Screen;</br>
+<img src="https://i.imgur.com/I0gEM2q.png" width="400" height="200" /> </br>
 
 ## Database
 Sorry idk how to export my database.
