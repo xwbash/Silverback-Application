@@ -1,5 +1,3 @@
-# Gorilla-Wear
-Databased UI Gorilla Wear shopping application
 # Gorilla Wear Application
 I wrote this program in 3 days, while in time I learned the sql language and C# FormSide
 
