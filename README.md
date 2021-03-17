@@ -8,7 +8,7 @@ You need to [Microsoft SQL ServerManagment](https://docs.microsoft.com/en-us/sql
 
 ## Contributing
 You can sign-up & sign-in with your sql server bought things it sends you a email as  </br>
-<img src="https://i.imgur.com/4SgIqF2.png" data-canonical-src="https://i.imgur.com/4SgIqF2.png" width="450" height="200" />
+<img src="https://i.imgur.com/4SgIqF2.png" data-canonical-src="https://i.imgur.com/4SgIqF2.png" width="450" height="400" />
 
 
 
