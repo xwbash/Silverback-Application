@@ -1,4 +1,4 @@
-# Gorilla Wear Application
+# Silverback Application
 I wrote this program in 3 days, while in time I learned the sql language and C# FormSide
 
 
@@ -12,14 +12,7 @@ You can sign-up & sign-in with your sql server bought things it sends you a emai
 
 ## Images
 <img src="https://i.imgur.com/4SgIqF2.png" width="250" height="250" /> </br>
-Log-In Screen; </br>
-<img src="https://i.imgur.com/k0Nen2K.png" width="250" height="400" /> </br>
-Sign-Up Screen;</br>
-<img src="https://i.imgur.com/syavkSZ.png" width="250" height="400" /> </br>
-Main-Page Screen;</br>
-<img src="https://i.imgur.com/WkZowJ9.png" width="400" height="200" /> </br>
-Orders Screen;</br>
-<img src="https://i.imgur.com/I0gEM2q.png" width="400" height="200" /> </br>
+The application pictures i posted on [IMGUR](https://imgur.com/a/mgKSllT)
 
 ## Database
 Sorry idk how to export my database.
