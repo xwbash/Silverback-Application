@@ -12,7 +12,7 @@ You can sign-up & sign-in with your sql server bought things it sends you a emai
 
 ## Images
 <img src="https://i.imgur.com/4SgIqF2.png" data-canonical-src="https://i.imgur.com/4SgIqF2.png" width="250" height="250" /> </br>
-<img src="https://i.imgur.com/k0Nen2K.png" data-canonical-src="https://i.imgur.com/4SgIqF2.png" width="250" height="500" /> </br>
+<img src="https://i.imgur.com/k0Nen2K.png" data-canonical-src="https://i.imgur.com/4SgIqF2.png" width="250" height="400" /> </br>
 
 
 
