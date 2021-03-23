@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 namespace GorillaWear
 {
     
     public partial class Form3 : Form
     {
-        static string constring = "Data Source=DESKTOP-2ELKNEJ\\SQLEXPRESS;Initial Catalog=kullanici_data;Integrated Security=True";
+        int ID;
+        string sifre_crypto;
+        static string constring = "Data Source=DESKTOP-2ELKNEJ\\SQLEXPRESS;Initial Catalog=kullanici_data;Integrated Security=True; MultipleActiveResultSets=True";
         SqlConnection connect = new SqlConnection(constring);
 
         public static string password_login, id_login;
@@ -28,12 +31,20 @@ namespace GorillaWear
         {
             password_login = guna2TextBox2.Text;
             id_login= guna2TextBox3.Text;
-            
+            password_login = Eramake.eCryptography.Encrypt(password_login);
             connect.Open();
-            SqlCommand command;
-            SqlDataReader reader;
+            SqlCommand command,c2;
+            SqlDataReader reader,r2;
 
-            command = new SqlCommand("select * from kullanici_id, sifreler where kullanici_adi='" + id_login+ "' and sifre='"+password_login+"'", connect);
+
+            //SELECT ID FROM kullanici_id where kullanici_adi='xwbash';
+            c2 = new SqlCommand("select ID from kullanici_id where kullanici_adi='" + id_login + "'",connect);
+            r2 = c2.ExecuteReader();
+            if (r2.Read())
+            {
+                ID = r2.GetInt32(0);
+            }
+            command = new SqlCommand("select * from kullanici_id, sifreler where kullanici_adi='" + id_login+ "' and CONVERT(VARCHAR, sifre)='" + password_login+"' and ID_LOGIN='"+ID+"'", connect);
             reader = command.ExecuteReader();
 
             if(reader.Read())
@@ -81,6 +92,7 @@ namespace GorillaWear
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 if (connect.State == ConnectionState.Closed)
@@ -92,10 +104,11 @@ namespace GorillaWear
                 komut.Parameters.AddWithValue("@kullanici_adi", guna2TextBox1.Text);
                 komut.ExecuteNonQuery();
 
-                kayit = "insert into isim(isim,soyisim) values(@isim,@soyisim)";
+                kayit = "insert into isim(isim,soyisim,nickname) values(@isim,@soyisim,@nickname)";
                 komut = new SqlCommand(kayit, connect);
                 komut.Parameters.AddWithValue("@isim", guna2TextBox9.Text);
                 komut.Parameters.AddWithValue("@soyisim", guna2TextBox8.Text);
+                komut.Parameters.AddWithValue("@nickname", guna2TextBox1.Text);
                 komut.ExecuteNonQuery();
 
 
@@ -106,16 +119,11 @@ namespace GorillaWear
                 komut.Parameters.AddWithValue("@city", guna2TextBox6.Text);
                 komut.ExecuteNonQuery();
 
+                sifre_crypto = Eramake.eCryptography.Encrypt(guna2TextBox4.Text);
                 kayit = "insert into sifreler(sifre) values(@sifre)";
                 komut = new SqlCommand(kayit, connect);
-                komut.Parameters.AddWithValue("@sifre", guna2TextBox4.Text);
+                komut.Parameters.AddWithValue("@sifre", sifre_crypto);
                 komut.ExecuteNonQuery();
-
-                kayit = "insert into isim(nickname) values(@nickname)";
-                komut = new SqlCommand(kayit, connect);
-                komut.Parameters.AddWithValue("@nickname", guna2TextBox1.Text);
-                komut.ExecuteNonQuery();
-
 
                 connect.Close();
                 MessageBox.Show("Eklendi");
@@ -126,6 +134,7 @@ namespace GorillaWear
             }
                 guna2GradientPanel2.Visible = false;
         }
+        
         /*
          * guna2TextBox9 == NAME
          * guna2TextBox8 == Surname

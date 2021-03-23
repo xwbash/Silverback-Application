@@ -17,3 +17,4 @@ C:\Users\Bash\source\repos\GorillaWear\GorillaWear\obj\Debug\GorillaWear.Form2.r
 C:\Users\Bash\source\repos\GorillaWear\GorillaWear\obj\Debug\GorillaWear.Form3.resources
 C:\Users\Bash\source\repos\GorillaWear\GorillaWear\obj\Debug\GorillaWear.Form4.resources
 C:\Users\Bash\source\repos\GorillaWear\GorillaWear\obj\Debug\GorillaWear.Form5.resources
+C:\Users\Bash\source\repos\GorillaWear\GorillaWear\bin\Debug\eCryptography.dll

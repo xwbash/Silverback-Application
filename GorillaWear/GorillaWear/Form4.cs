@@ -51,7 +51,7 @@ namespace GorillaWear
             string Subject = ("Hello welcome to our team! Become a silverback! \n We take your order and we will be send you soon \n Order Time ; "+ Zaman + " \n Your adress ; "+ Form1.adres + " \n Product ID; "+ Form1.urun_id + " \n Price; "+ Form1.price+"$ \n Thank you for shopping with us!.");
             
             MailMessage eposta = new MailMessage();
-            eposta.From = new MailAddress("");
+            eposta.From = new MailAddress("deanwandsamw4ever@gmail.com");
             eposta.To.Add(Form1.mail);
             eposta.Subject = "Your purchase has been confirmed";
             eposta.Body = Subject;
