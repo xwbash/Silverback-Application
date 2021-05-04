@@ -233,6 +233,16 @@ namespace GorillaWear.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image {
+            get {
+                object obj = ResourceManager.GetObject("image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap modern_silverback_gorilla_mascot_logo_vector_30285287_00000 {
             get {
                 object obj = ResourceManager.GetObject("modern-silverback-gorilla-mascot-logo-vector-30285287_00000", resourceCulture);
@@ -256,6 +266,16 @@ namespace GorillaWear.Properties {
         internal static System.Drawing.Bitmap modern_silverback_gorilla_mascot_logo_vector_30285287_000002 {
             get {
                 object obj = ResourceManager.GetObject("modern-silverback-gorilla-mascot-logo-vector-30285287_000002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PngItem_5381119 {
+            get {
+                object obj = ResourceManager.GetObject("PngItem_5381119", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

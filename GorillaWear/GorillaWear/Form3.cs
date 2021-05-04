@@ -44,7 +44,7 @@ namespace GorillaWear
             {
                 ID = r2.GetInt32(0);
             }
-            command = new SqlCommand("select * from kullanici_id, sifreler where kullanici_adi='" + id_login+ "' and CONVERT(VARCHAR, sifre)='" + password_login+"' and ID_LOGIN='"+ID+"'", connect);
+            command = new SqlCommand("select kullanici_adi,sifre,k1.[ID] from kullanici_id k1 inner join sifreler k2 on k1.ID = k2.ID where K1.kullanici_adi ='" + id_login+ "' and CONVERT(VARCHAR, sifre)='" + password_login+ "' and k1.[ID]='" + ID+"'", connect);
             reader = command.ExecuteReader();
 
             if(reader.Read())
@@ -90,6 +90,16 @@ namespace GorillaWear
 
         }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            guna2GradientPanel2.Visible = false;
+        }
+
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             
@@ -125,8 +135,12 @@ namespace GorillaWear
                 komut.Parameters.AddWithValue("@sifre", sifre_crypto);
                 komut.ExecuteNonQuery();
 
+
+                kayit = "alter view login_system as select kullanici_adi,sifre from sifreler inner join kullanici_id on kullanici_id.ID = sifreler.ID";
+                komut = new SqlCommand(kayit, connect);
+                komut.ExecuteNonQuery();
                 connect.Close();
-                MessageBox.Show("Eklendi");
+                MessageBox.Show("Sign-upped!");
             }
             catch(Exception hata)
             {
